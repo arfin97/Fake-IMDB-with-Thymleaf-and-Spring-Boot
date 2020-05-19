@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- end -->
+    <link th:href="@{/css/style.css}"  rel="stylesheet">
+    <title>Add Movie</title>
+
+</head>
+<body class="container">
+    <h1 th:text="${'id: ' + id}" >Name</h1>
+    <h2 th:text="${'Name: ' + movie.name}" >Name</h2>
+    <!--    <h1>Update Detail of <span th:text="${movie.name}" th:remove="tag" ></span></h1>-->
+    <form action="#" method="POST" th:action="@{/confirm-update}" th:object="${movie}">
+        <input type="text" th:value="${movie.name}" th:field="*{name}">
+        <input type="hidden" th:value="${id}" name="id">
+        <input type="Update">
+    </form>
+    <h1><a th:href="@{/movie-list}" class="btn btn-primary">List of movies</a></h1>
+
+<div th:replace="fragments/general.html::footer">This footer contains bootstrap JS and footer note and this div will be replaced</div>
+</body>
+</html>

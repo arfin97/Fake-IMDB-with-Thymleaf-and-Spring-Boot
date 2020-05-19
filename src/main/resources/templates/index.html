@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html::header (title='Home')" >This is repalcable header</head>
+<nav th:replace="fragments/nav.html::nav">Replacable Navigation</nav>
+
+
+<body>
+<div class="container">
+    <h1>Welcome to Fake IMDB</h1>
+<!--    <h5 th:text="${today}" class="font-italic font-weight-light" >Date of today</h5>-->
+    <h1 th:replace="fragments/date-today.html::date-today">This is date fragment comming from fragment folder</h1>
+    <!--    <h1>Welcome to fake IMDB</h1>-->  <!-- this was prevous header but now it is repleaced by fragment from general -->
+    <h1><a th:href="@{/add-movie}">Add a movie</a></h1>
+    <h1><a th:href="@{/movie-list}">List of movies</a></h1>
+
+    <div th:replace="fragments/general.html::footer">This footer contains bootstrap JS and footer note and this div will be replaced</div>
+</div>
+</body>
+</html>

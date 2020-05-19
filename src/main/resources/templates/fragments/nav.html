@@ -1,0 +1,24 @@
+
+<nav th:fragment="nav" class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" th:href="@{/home}">Fake IMDB with Thymleaf and Spring boot 🍃</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/home}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/add-movie}">Add movie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/movie-list}">List of movies</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+        </form>
+    </div>
+</nav>

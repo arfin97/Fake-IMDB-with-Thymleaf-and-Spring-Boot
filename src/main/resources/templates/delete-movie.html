@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html::header (title='Home')" >This is repalcable header</head>
+<nav th:replace="fragments/nav.html::nav">Replacable Navigation</nav>
+
+<body>
+    <div class="container">
+
+        <h1>
+            Are you sure you want to delete
+                <span th:text="${id}" th:remove="tag">Id</span>
+            ?
+        </h1>
+
+        <form action="#" th:action="@{/confirm-delete}" method="POST">
+            <!--    <input type="text" id="id" name="id" th:value="*{id}" />-->
+            <div class="form-group">
+                <input type="hidden" id="id" name="id" th:value="${id}"  /> <!-- this is secretly sending id in post request to delet it from db -->
+
+                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                <a type="button" class="btn btn-info"  th:href=" @{ /movie-detail (id=${id}) } ">No, Cancel</a>
+
+            </div>
+        </form>
+
+
+    <div th:replace="fragments/general.html::footer">This footer contains bootstrap JS and footer note and this div will be replaced</div>
+</div>
+</body>
+</html>

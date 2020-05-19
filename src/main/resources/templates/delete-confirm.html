@@ -1,0 +1,14 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html::header (title='Home')" >This is repalcable header</head>
+<nav th:replace="fragments/nav.html::nav">Replacable Navigation</nav>
+
+<body>
+<div class="container">
+        <h1>Deleted</h1>
+        <a th:href="@{/movie-list}" class="btn btn-info">List of movies</a>
+        <a th:href="@{/home}" class="btn btn-success">Go back to Home</a>
+        <div th:replace="fragments/general.html::footer">This footer contains bootstrap JS and footer note and this div will be replaced</div>
+</div>
+</body>
+</html>

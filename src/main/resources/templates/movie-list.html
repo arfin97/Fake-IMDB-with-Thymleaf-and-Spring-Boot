@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html::header (title='List')" >This is repalcable header</head>
+<nav th:replace="fragments/nav.html::nav">Replacable Navigation</nav>
+
+<body>
+<div class="container">
+    <br>
+    <br>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">List of Movies</a>
+
+        <div th:if="${#lists.size(movieList) != 0}" th:each="movie, iterStat: ${movieList}">
+            <!--        <h3 th:href="@{'/movie/'+ ${iterStat.count}}" th:text="${iterStat.count + '.' + ' ' + movie.name}">Movie name</h3>-->
+            <a
+                    th:href=" @{ /movie-detail (id=${iterStat.count}) }"
+                    th:text="${iterStat.count + '.' + ' ' + movie.name}"
+                    class="list-group-item list-group-item-action"> <!-- http://localhost:8080/movie?id=1 -->
+            </a>
+        </div>
+        <div th:unless="${#lists.size(movieList) != 0}" class="list-group-item list-group-item-action" >No movies added</div>
+
+    </div>
+
+
+
+
+
+    <br><br><div th:replace="fragments/general.html::footer">This footer contains bootstrap JS and footer note and this div will be replaced</div>
+</div>
+</body>
+</html>
+
+
+
