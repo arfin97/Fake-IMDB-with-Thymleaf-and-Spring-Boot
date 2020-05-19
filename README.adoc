@@ -1,0 +1,67 @@
+# Fake-IMDB-with-Thymleaf-and-Spring-Boot
+Fake IMDB with Thymleaf and Spring boot 🍃
+
+== Adoc Notes
+. In form if there are multiple buttons then you need to specifiy
+the types of the button otherwise the buttons will be treated
+as submit buttons. for submit use type=submit. for other buttons
+use type=button.
+
+. But the best solution is `<a th:href="@{/home}" class="btn btn-success">Go back to Home</a>`
+
+. In JS if you use findElementById it will return single instance
+and you can use all the attributes and operation of html element
+in it. But if you use findElementByClassNames it will return
+a array of HTMLELEMENTS then you will have to find your
+desired element and manupulate it. Mostly by [0] index.
+
+
+. You can reset form data using `<input type="reset" value="Reset">`
+But it won't always work.
+
+. Thymleaf can be used to dynamically append class using
+`<div class="alert alert-warning alert-dismissible fade" th:classappend="${message} ? show : d-none" role="alert">`
+the result will be `alert alert-warning alert-dismissible fade show` or `alert alert-warning alert-dismissible fade` based on `th:classappend="${message} ? show : d-none"`
+
+. The code for message showing in a thymleaf page is
+[source,xml]
+.filename.xml
+----
+    <div class="alert alert-warning alert-dismissible fade" th:classappend="${message} ? show : d-none" role="alert">
+        <strong th:text="${message}">Holy guacamole!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+----
+
+
+. form top `<form action="#" th:action="@{/add-movie}" th:object="${movie}" method="POST">`
+. To get form data from field with name `th:field="*{name}`
+. Best link reference thymeleaf `https://www.thymeleaf.org/doc/articles/standardurlsyntax.html`
+
+. Template Inheritance
+. Intillij Support for thymleaf
+. Text inside paragraph
+. Redirect jinishtar kaj ektu bujhan
+. Base Template in thymleaf
+. Reindent kore kivabe html
+
+
+https://www.baeldung.com/thymeleaf-in-spring-mvc
+https://www.baeldung.com/spring-boot-crud-thymeleaf
+https://mkyong.com/java/java-how-to-get-current-date-time-date-and-calender/
+https://www.baeldung.com/thymeleaf-list
+https://www.baeldung.com/tag/thymeleaf/
+https://www.baeldung.com/thymeleaf-iteration
+https://stackoverflow.com/questions/25133807/thymeleaf-how-to-use-conditionals-to-dynamically-add-remove-a-css-class
+https://stackoverflow.com/questions/41734406/how-to-clear-the-value-after-refresh-the-page
+https://www.baeldung.com/spring-redirect-and-forward
+https://stackoverflow.com/questions/8013429/how-do-i-detect-a-page-refresh-using-jquery
+https://stackoverflow.com/questions/6271417/java-get-the-current-class-name
+https://stackoverflow.com/questions/21436550/javascript-how-to-get-only-one-element-by-class-name/21436552
+https://www.thymeleaf.org/doc/articles/standardurlsyntax.html
+https://howtodoinjava.com/java/collections/arraylist/remove-element-from-arraylist/
+https://stackoverflow.com/questions/36519690/using-templates-includes-in-spring-boot
+https://stackoverflow.com/questions/28559817/displaying-active-navigation-based-on-contextual-data
+https://www.baeldung.com/spring-thymeleaf-conditionals
