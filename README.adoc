@@ -40,12 +40,18 @@ the result will be `alert alert-warning alert-dismissible fade show` or `alert a
 . To get form data from field with name `th:field="*{name}`
 . Best link reference thymeleaf `https://www.thymeleaf.org/doc/articles/standardurlsyntax.html`
 
-. Template Inheritance
-. Intillij Support for thymleaf
-. Text inside paragraph
-. Redirect jinishtar kaj ektu bujhan
-. Base Template in thymleaf
-. Reindent kore kivabe html
+=== Questions I had making this project and their answers:
+
+. Is there any Template Inheritance system in Thymeleaf that we have in Django?
+.. No. We don't have template inheritance. Thymeleaf doesn't follows the hirarchical structure. If you want to do something like that, you have much powerful Fragments in thymleaf.
+. Is there any Intillij IDEA Support for thymleaf? Can I select a variable and see where it is comming from? 
+.. No. The view and model are loosely coupled. Super loosely. The variables you declare in the template have no knowing which controller will supply that variable. 3-4 controllers could supply that. Though it is a much needed feature. It has it's own reason not to get the light. 
+. How do you put variable inside running paragraph?
+.. Easy peasy. Just put `${variable}` inside dummy. And if you feel fancy. You can write <span th:remove="tag" th:text="inserted text">I will be replaced</span>
+. What is redirect and how is it difference from direcly calling a template?
+.. Redirect actually forces your browser to go to a certain URL. If that URL has a controller attached to it. That controller will be called. On the other hand if you suplly a single template, it will depend on the controller that supplies it. Let's say you added a student, and you want to show the student list after you added the student. If you call the student-list.html template from the add-student controller, the template will have no data to show as the add-student controller only adds the student. So it sends or redirects the response to the controller of student-list so that the responsible controller can take proper action and supply the list of students to show properly. 
+. How to re-indent code in IntilliJ?
+.. `ctrl+alt+l` 
 
 
 https://www.baeldung.com/thymeleaf-in-spring-mvc
